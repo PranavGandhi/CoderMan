@@ -1,0 +1,60 @@
+<div class="container" *ngIf="islogin">
+  <div class="row">
+    <app-questions (getdata)="getdata($event)" [sendquestionNo]="questionNo"></app-questions>
+
+  </div>
+  <div class="row">
+    <div class="col-8">
+      <div class="form-group">
+        <label for="code">Code</label>
+        <textarea class="form-control rounded-0" #code id="code" rows="10"></textarea>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="form-group">
+        <label for="input">Input</label>
+        <textarea class="form-control rounded-0" #input id="input" rows="4"></textarea>
+      </div>
+
+
+      <div class="form-group">
+        <label for="output">Output</label>
+        <textarea class="form-control rounded-0" [(ngModel)]="output" id="output" rows="4"></textarea>
+      </div>
+
+
+    </div>
+    <p>Test Case Passed: {{testcasePassed}}</p>
+    <div>
+      <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+        <button type="button" (click)="postRunData(code.value,input.value)" class="btn btn-primary"><div><div *ngIf="!waitingforRun">Run</div><div *ngIf="waitingforRun"> <sa-spinner-circular [size]="25"></sa-spinner-circular></div></div></button>
+        <button type="button" (click)="postSubmitData(code.value)" class="btn btn-primary"><div><div *ngIf="!waitingforSubmit">Submit</div><div *ngIf="waitingforSubmit"> <sa-spinner-circular [size]="25"></sa-spinner-circular></div></div></button>
+
+        <div class="btn-group" role="group">
+
+          <select (change)="selectChangeHandler($event)">
+            <option value="py">Python</option>
+            <option value="cpp">C++</option>
+            <option value="c">C</option>
+            <option value="cs">C#</option>
+            <option value="java">Java</option>
+            <option value="rb">Ruby</option>
+            <option value="kt">Kotlin</option>
+            <option value="swift">Swift</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+</div>
+
+
+<div class="container" *ngIf="!islogin">
+  <p></p>
+  <p></p>
+  <p>Please Login to access the compiler</p>
+</div>

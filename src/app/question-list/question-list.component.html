@@ -1,0 +1,27 @@
+<p></p>
+<div class='container'>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Question Name</th>
+        <th scope="col">Question Description</th>
+        <th scope="col"> <input type="text" class="form-control"[(ngModel)]='filteredString' placeholder="Search"></th>
+      </tr>
+
+    </thead>
+    <tbody>
+      <tr *ngFor="let question of Question_list | filter:filteredString ; let question_index=index ">
+        <th scope="row">{{ question_index +1 }}</th>
+        <td>{{ question.question }}</td>
+        <td>{{ question.question_sum }}</td>
+        <td>
+          <button (click)="onClick(question_index)">Solve</button>
+
+        </td>
+
+
+      </tr>
+    </tbody>
+  </table>
+</div>
