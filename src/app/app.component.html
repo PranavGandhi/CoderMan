@@ -1,21 +1,35 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink="/home">Coder Man</a>
+    <a class="navbar-brand" routerLink="/home">CoderMan</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
       aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-
+        <div class="qlist"> 
         <a class="nav-link" routerLink="/questionlist">Question</a>
+      </div >
         <div class="d-flex">
-          <a class="nav-link" (click)="login()" *ngIf="!isLogin">Login</a>
-          <a class="nav-link" (click)="logout()" *ngIf="isLogin">Logout</a>
+          <a class="nav-link" (click)="login()" *ngIf="!getToken">Login</a>
+          <a class="nav-link"  *ngIf="getToken">Hi ,{{getToken.name}}</a>
+          <a class="nav-link" (click)="logout()" *ngIf="getToken">Logout</a>
+          
+          
         </div>
       </div>
     </div>
   </div>
+</nav> -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="/home">CoderMan</a>
+  <a class="nav-link" routerLink="/questionlist">Question</a>
+  <div class="login">
+  <a class="nav-link" (click)="login()" *ngIf="!getToken">Login</a>
+  <a class="nav-link"  *ngIf="getToken">Hi ,{{getToken.name}}</a>
+  <a class="nav-link" (click)="logout()" *ngIf="getToken">Logout</a>
+</div>
 </nav>
 
 <router-outlet></router-outlet>

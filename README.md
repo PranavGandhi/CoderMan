@@ -1,27 +1,48 @@
-# AngularOnlineIdeApi
+Coding Assessment Platform
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.9.
+tool used-
+Angular 12.2.9
+nodejs
+postgres
+typeORM
 
-## Development server
+User can start writing program without the hassle of setting up the environment.
+user can sign in and start to code
+the use can choice a problem to solve
+they can select out of C++,C,c,C#,Java,Python,Ruby,Kotlin and Swift to solve the problem
+the users code is checked in the backend to make sure it passes all testcases
+if the user's code passes all testcases it is consider solved.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Frontend(angular)
 
-## Code scaffolding
+home page
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Contains cards to inform user of importance of different languages
+card to start and go to question list
 
-## Build
+Question list
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+contains list of problem that the users can solve
+shows queston name and question describtion
+user can also search for a specific question
 
-## Running unit tests
+compiler
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Contains text area to write code
+text area to give input to the code
+box where the user gets the output of their code
 
-## Running end-to-end tests
+run button to run the code and get output
+submit button to submit the code for assissment
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+questiion display
 
-## Further help
+question name
+question describtion
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+sample input and the desired output.
+
+Login
+
+the user can use google or facebook to login into the site
+Oauth is used for authentication

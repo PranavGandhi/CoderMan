@@ -29,7 +29,7 @@ export class QuestionsComponent implements OnInit {
     // })    
 
     this.http.get(url).toPromise().then((data: any) => {
-      console.log(data);
+      //console.log(data);
       this.getdata.emit(data);
       this.question = data.question
       this.question_sum = data.question_sum
